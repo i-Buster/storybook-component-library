@@ -8,5 +8,18 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions"
   ],
-  "framework": "@storybook/preact"
+  "framework": "@storybook/preact",
+  babel: async options => ({
+    ...options,
+    presets: [["@babel/typescript", { jsxPragma: "h" }]],
+  }),
+  "typescript": {
+    check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    },
+  },
 }
