@@ -2,6 +2,8 @@ import { h } from 'preact';
 import { Story, Meta } from '@storybook/preact';
 
 import { DateComponent, DateComponentProps } from './Date';
+import { fireEvent } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 export default {
   /* 👇 The title prop is optional.
@@ -43,3 +45,13 @@ VADateComponent.args = {
     value: '',
     required: true
 };
+
+VADateComponent.play = () => {
+  const date = document.querySelector(".datePicker");
+
+  fireEvent.focus(date);
+  fireEvent.change(date, { target: { value: '2020-05-12' } });
+
+  expect(date).toHaveValue('2020-05-12')
+ };
+ 

@@ -28,7 +28,7 @@ export const DateComponent = (props: DateComponentProps) => {
       <label for={props?.id}>
         { props?.label }
       </label>
-      <input type="date" name={props?.name} id={props?.id} value={value} min={min} max={max} required={props?.required} />
+      <input className="datePicker" type="date" name={props?.name} id={props?.id} value={value} min={min} max={max} required={props?.required} />
     </div>
   );
 };

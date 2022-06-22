@@ -2,6 +2,8 @@ import { h } from 'preact';
 import { Story, Meta } from '@storybook/preact';
 
 import { CardComponent } from './Cards';
+import { within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 export default {
   /* 👇 The title prop is optional.
@@ -27,3 +29,14 @@ VACardComponent.args = {
     hotelDescription: `The Westin New York at Times Square is an exhilarating achievement of art and architecture. Connected to the hotel is a 200,000sq ft multiplex, housing 13 cinema screens. As you would expect from one of the Big Apple's latest gems, all rooms are beautifully furnished with an excellent range of amenities. Not forgetting the luxurious Westin Heavenly.`
 };
 
+VACardComponent.play = ({ args, canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  const image = canvas.getByRole("img");
+  expect(image).toHaveAttribute('src')
+  expect(image).toHaveAttribute('alt')
+  
+  const body = document.querySelector("#hotelDescription");
+  expect(typeof body.textContent).toBe('string');
+ };
+ 

@@ -2,6 +2,8 @@ import { h } from 'preact';
 import { Story, Meta } from '@storybook/preact';
 
 import { CheckBox } from './CheckBox';
+import { within, fireEvent } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 export default {
   /* 👇 The title prop is optional.
@@ -26,3 +28,11 @@ VACheckBox.args = {
     checked: true
 };
 
+VACheckBox.play = ({ args, canvasElement }) => {
+  const canvas = within(canvasElement);
+  const checkBox = canvas.getByRole("checkbox");
+  expect(checkBox.checked).toEqual(true)
+  fireEvent.click(checkBox)
+  expect(checkBox.checked).toEqual(false)
+ };
+ 

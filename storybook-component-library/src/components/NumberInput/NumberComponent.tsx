@@ -15,10 +15,10 @@ type NumberProps = {
 export  const NumberComponent = (props: NumberProps) => {
   return (
     <div className='number-component'>
-      <label for={props?.id}>
+      <label id="numberLabel" for={props?.id}>
         { props?.label }
       </label>
-      <input type="number" name={props?.name} id={props?.id} min={props?.min} max={props?.max} value={props?.value} required={props?.required} />
+      <input className="numberInput" type="number" name={props?.name} id={props?.id} min={props?.min} max={props?.max} value={props?.value} required={props?.required} />
     </div>
   );
 };

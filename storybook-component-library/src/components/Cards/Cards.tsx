@@ -24,12 +24,12 @@ export const CardComponent = ({
         <div className="card-container">
             <img id={`hotel_image_${id}`} src={carouselURL}
                 alt="card preview" />
-            <div className="card-body">
+            <div id="c-body" className="card-body">
                 <h1>{hotelName}</h1>
                 <p className="price">£{pricePerPerson}*</p>
                 <label id="rating_label" className="ratings-text">Rating</label>
                 <p>{hotelRating}</p>
-                <p>{hotelDescription}</p>
+                <p id="hotelDescription">{hotelDescription}</p>
             </div>
         </div>
     );

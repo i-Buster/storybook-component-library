@@ -2,6 +2,8 @@ import { h } from 'preact';
 import { Story, Meta } from '@storybook/preact';
 
 import { NumberComponent } from './NumberComponent';
+import { fireEvent } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 export default {
   /* 👇 The title prop is optional.
@@ -21,21 +23,32 @@ export const VAAgeInput = Template.bind({});
 
 
 VANumberInput.args = {
-    label: 'Your Component Label',
-    name: 'Enter Duration',
+    label: 'Enter Duration',
+    name: 'EnterDuration',
     id: 1,
     min:1,
     max:21,
-    value:'',
+    value:3,
     required: true
 };
 
 VAAgeInput.args = {
-    label: 'Your Component Label',
-    name: 'Enter Age',
+    label: 'Enter Age',
+    name: 'Enter \Age',
     id: 1,
     min:1,
     max:9,
-    value:'',
+    value:6,
     required: true
 };
+
+VANumberInput.play = () => {
+  const label = document.querySelector("#numberLabel");
+  expect(label.textContent).toBe('Enter Duration');
+  
+  const input = document.querySelector(".numberInput");
+  expect(input.value).toBe('3');
+  fireEvent.change(input, { target: { value: '4' } })
+  expect(input.value).toBe('4');
+
+ };
