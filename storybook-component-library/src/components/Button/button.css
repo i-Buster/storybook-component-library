@@ -1,0 +1,24 @@
+
+.button {
+  text-align: center;
+  border: none;
+  background: #DA0530;
+  color: #FFFFFF;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 14px 16px;
+  border: 0;
+  display: inline-block;
+  font-family: Gotham, 'Helvetica', 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.button.skin-secondary {
+  background-color: transparent;
+  font-weight: 700;
+  color: #DA0530;
+  border: 1px solid #DA0530;
+} 

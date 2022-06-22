@@ -1,6 +1,7 @@
-import './style/index.css';
-import App from './components/app';
-import { Button } from './stories/Button'
+import { Button } from './components/Button/Button';
+import { SelectComponent } from './components/SelectComponent/SelectComponent';
+import { LoadingSpinner } from './components/LoadingSpinner/LoadingSpinner';
 
 export { Button }
-export default App;
+export {SelectComponent}
+export {LoadingSpinner}

@@ -28,20 +28,26 @@
   "dependencies": {
     "preact": "^10.3.1",
     "preact-render-to-string": "^5.1.4",
-    "preact-router": "^3.2.1"
+    "preact-router": "^3.2.1",
+    "luxon": "^2.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@storybook/addon-a11y": "^6.5.9",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
     "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/jest": "0.0.10",
     "@storybook/manager-webpack4": "^6.5.9",
     "@storybook/preact": "^6.5.9",
     "@storybook/testing-library": "0.0.13",
     "@types/enzyme": "^3.10.5",
     "@types/jest": "^26.0.8",
+    "@types/luxon": "^2.3.2",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "babel-loader": "^8.2.5",
@@ -53,13 +59,11 @@
     "jest": "^27.2.5",
     "jest-preset-preact": "^4.0.2",
     "preact-cli": "^3.0.0",
-    "sirv-cli": "^1.0.0-next.3",
-    "typescript": "^4.5.2",
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.0.6",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.31.1"
+    "rollup-plugin-typescript2": "^0.31.1",
+    "sirv-cli": "^1.0.0-next.3",
+    "typescript": "^4.5.2"
   },
   "jest": {
     "preset": "jest-preset-preact",
