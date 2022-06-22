@@ -12,7 +12,7 @@ export default {
   component: DateComponent,
   argTypes: {
     name: { control: 'text' },
-    value: { control: 'date', description: "Creation date for departure.", name: 'departure date1' },
+    // value: { control: 'date', description: "Creation date for departure.", name: 'departure date1' },
     required: { control: 'boolean' },
     label: {
       name: 'label',
@@ -38,7 +38,8 @@ export const VADateComponent = Template.bind({});
 
 VADateComponent.args = {
     label: 'Select departure date', 
-    name: 'test',
-    value: new Date().toDateString(),
+    name: 'datePicker',
+    id: '1',
+    value: '',
     required: true
 };

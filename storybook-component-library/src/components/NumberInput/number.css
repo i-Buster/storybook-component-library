@@ -1,0 +1,9 @@
+.number-component input {
+      width: 100%;
+      padding: 12px 16px;
+    
+  }
+
+  .number-component[disabled] {
+    cursor: default;
+  }
